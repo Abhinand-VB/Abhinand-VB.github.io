@@ -727,12 +727,22 @@
     clearTimeout(mailToastTimer);
     mailToastTimer = setTimeout(()=>{ t.style.opacity = '0'; }, 2200);
   }
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).catch(()=>{});
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e) {}
+      ta.remove();
+    }
+  }
   document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{
     a.addEventListener('click', ()=>{
       const addr = a.getAttribute('href').slice(7).split('?')[0];
-      if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(addr).then(()=>showMailToast(addr)).catch(()=>{});
-      }
+      copyText(addr);
+      showMailToast(addr);
     });
   });
 </script>
