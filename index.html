@@ -264,7 +264,8 @@
   /* ---------- CERTS ---------- */
   .certs{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
   .cert{display:grid;grid-template-columns:1fr auto;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center;}
-  .cert .name{font-family:var(--display);font-size:1.15rem;font-weight:600;}
+  .cert .name{font-family:var(--display);font-size:1.15rem;font-weight:600;transition:color .2s ease;}
+  .cert.link:hover .name{color:var(--accent);}
   .cert .meta{color:var(--muted);font-size:.92rem;margin-top:2px;}
   .cert .date{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.06em;white-space:nowrap;}
 
@@ -564,7 +565,7 @@
       </div>
       <div class="skill-cell">
         <h4>AI / ML / Data</h4>
-        <div class="list"><span>scikit-learn</span><span>MediaPipe</span><span>NumPy</span><span>pandas</span><span>Computer vision</span><span>Local LLMs</span><span>Streamlit</span><span>Prompt engineering</span></div>
+        <div class="list"><span>scikit-learn</span><span>MediaPipe</span><span>NumPy</span><span>pandas</span><span>Computer vision</span><span>Local LLMs</span><span>Streamlit</span><span>Prompt engineering</span><span>AMD ROCm</span><span>HIP</span><span>GPU acceleration</span></div>
       </div>
       <div class="skill-cell">
         <h4>Tools &amp; Sim</h4>
@@ -600,6 +601,10 @@
       <span class="num">06</span><h2>Certifications</h2><span class="rule"></span>
     </div>
     <div class="certs reveal">
+      <a class="cert link" href="https://www.credly.com/badges/a91548da-969c-423b-9884-b658e4e82370" target="_blank" rel="noopener">
+        <div><div class="name">AMD ROCm&trade; Certified Associate</div><div class="meta">AMD AI Academy &middot; Valid through Aug 2028 &middot; Verify on Credly &rarr;</div></div>
+        <div class="date">Aug 2026</div>
+      </a>
       <div class="cert">
         <div><div class="name">Agile &middot; Flutter &middot; Java</div><div class="meta">Degreed Do Select Certifications &mdash; IBS Software</div></div>
         <div class="date">Jan 2025</div>
