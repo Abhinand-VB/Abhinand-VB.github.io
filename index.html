@@ -251,15 +251,19 @@
   .skill-cell .list span{font-size:.86rem;color:#cfc9bd;background:var(--surface);border:1px solid var(--line-soft);padding:5px 11px;border-radius:3px;}
 
   /* ---------- SHIPPED ---------- */
-  .shipped{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .shipped{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;}
   @media(max-width:680px){.shipped{grid-template-columns:1fr;}}
   .ship{border:1px solid var(--line);border-radius:5px;padding:24px;background:var(--surface);display:flex;flex-direction:column;gap:8px;transition:.25s;}
   .ship:hover{border-color:rgba(227,166,74,0.4);transform:translateY(-3px);}
   .ship .badge{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);}
   .ship h3{font-family:var(--display);font-size:1.25rem;font-weight:600;}
   .ship p{color:#c4bdb1;font-size:.92rem;}
-  .ship .store{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:6px;}
-  .ship:hover .store{color:var(--accent);}
+  .ship .stores{display:flex;flex-wrap:wrap;gap:20px;margin-top:auto;padding-top:12px;}
+  .ship .store{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:color .25s;}
+  .ship .store svg{width:14px;height:14px;flex:0 0 auto;}
+  .ship .store .arw{transition:transform .25s;}
+  .ship .store:hover{color:var(--accent);}
+  .ship .store:hover .arw{transform:translateX(4px);}
 
   /* ---------- CERTS ---------- */
   .certs{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
@@ -300,6 +304,7 @@
     <div class="links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
+      <a href="#shipped">Shipped</a>
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -400,10 +405,45 @@
     </div>
   </section>
 
+  <!-- SHIPPED -->
+  <section id="shipped">
+    <div class="sec-head reveal">
+      <span class="num">03</span><h2>Shipped to stores</h2><span class="rule"></span>
+    </div>
+    <div class="shipped">
+      <div class="ship reveal">
+        <span class="badge">iOS &amp; Android &middot; 50K+ downloads</span>
+        <h3>Star Flyer Booking App</h3>
+        <p>Contributed to the customer-facing booking and check-in app for Star Flyer (SFJ), shipped on both platforms &mdash; a production mobile product used by real travelers.</p>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/jp/app/starflyer-app/id6463192302" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M7.1 16.6 11.05 9.6M12.95 9.6 16.9 16.6M9.1 14.1h5.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>App Store</span><span class="arw">&rarr;</span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=jp.starflyer.bookingapp&amp;hl=en_US" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.6 2.4 20.2 12 4.6 21.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4.6 2.4V21.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Google Play</span><span class="arw">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="ship reveal">
+        <span class="badge">iOS &amp; Android</span>
+        <h3>iFly Corporate &mdash; Etihad</h3>
+        <p>Contributed features to Etihad's corporate travel app on iOS and Android, including booking and modify-booking workflows.</p>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/us/app/iflycorporate-etihad/id6749933493" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M7.1 16.6 11.05 9.6M12.95 9.6 16.9 16.6M9.1 14.1h5.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>App Store</span><span class="arw">&rarr;</span></a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.adnoc.iFlyStaff&amp;hl=en_US" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.6 2.4 20.2 12 4.6 21.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4.6 2.4V21.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Google Play</span><span class="arw">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="ship reveal">
+        <span class="badge">Google Play &middot; 10K+ downloads</span>
+        <h3>iFly Etihad &mdash; Staff Travel</h3>
+        <p>Etihad's enterprise staff-travel app, giving airline employees a mobile channel to manage personal and business travel against company policy.</p>
+        <div class="stores">
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.etihad.iFlyStaff&amp;hl=en_US" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.6 2.4 20.2 12 4.6 21.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4.6 2.4V21.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Google Play</span><span class="arw">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- WORK -->
   <section id="work">
     <div class="sec-head reveal">
-      <span class="num">03</span><h2>Selected work</h2><span class="rule"></span>
+      <span class="num">04</span><h2>Selected work</h2><span class="rule"></span>
     </div>
     <div class="proj-grid">
 
@@ -424,6 +464,14 @@
       </div>
 
       <div class="card reveal">
+        <div class="top"><span class="kind">Browser automation &middot; AI tooling</span></div>
+        <h3>Career-Ops Automation Layer</h3>
+        <p>A human-in-the-loop automation layer I built on top of the open-source career-ops job-search pipeline. A Playwright-over-CDP form filler handles Greenhouse, Ashby, and Lever applications, including iframe-embedded forms, React-select dropdowns, and shadow-DOM widgets. It fills each field, re-asserts anything a conditional re-render clears, verifies the final state from the live DOM, and always stops before Submit. Also includes LLM-drafted company essays and cover letters grounded in real proof points, a Chrome extension backed by a local Node daemon, and a trace log with outcome and blocker analytics.</p>
+        <div class="tags"><span>Node.js</span><span>Playwright</span><span>Chrome DevTools Protocol</span><span>Chrome Extensions</span><span>LLM</span><span>LaTeX</span></div>
+        <div class="card-links"><a class="link" href="https://github.com/career-ops-hq/career-ops" target="_blank" rel="noopener">Upstream project &rarr;</a></div>
+      </div>
+
+      <div class="card reveal">
         <div class="top"><span class="kind">Full-stack &middot; web platform</span></div>
         <h3>Eventora</h3>
         <p>A full-stack event-management platform with role-based flows for attendees, organizers, and admins &mdash; registration, QR ticketing and check-in, broadcasts, and analytics. Next.js + React front end over a FastAPI/PostgreSQL backend with JWT auth and RBAC.</p>
@@ -433,10 +481,10 @@
 
       <div class="card reveal">
         <div class="top"><span class="kind">Computer vision &middot; ML pipeline</span></div>
-        <h3>ASL Sign-Language Translator</h3>
-        <p>An end-to-end pipeline for hand-sign recognition: MediaPipe landmark extraction &rarr; engineered geometric features from 63-dim landmarks &rarr; SVM classification &rarr; evaluation artifacts &rarr; live webcam inference. Structured as a reproducible ML repo with CLI and YAML config.</p>
-        <div class="tags"><span>Python</span><span>MediaPipe</span><span>scikit-learn</span><span>SVM</span><span>Docker</span></div>
-        <div class="card-links"><a class="link" href="https://github.com/Abhinand-VB/asl-sign-language-translator" target="_blank" rel="noopener">View on GitHub &rarr;</a></div>
+        <h3>ASL Sign-Language Detection</h3>
+        <p>A three-part ASL recognition system: a letter classifier with swappable backends (MediaPipe landmarks into SVM / Random Forest / MLP, PyTorch CNNs, or YOLO), a WLASL word recognizer using BiLSTM and Transformer models over skeletal sequences, and a fingerspelling decoder that smooths letter sequences into words. Served through a Flask web UI with live webcam and upload inference, containerized with Docker.</p>
+        <div class="tags"><span>Python</span><span>PyTorch</span><span>MediaPipe</span><span>scikit-learn</span><span>YOLO</span><span>Flask</span><span>Docker</span></div>
+        <div class="card-links"><a class="link" href="https://github.com/Anuragbo/ML_257_SignLangDetection" target="_blank" rel="noopener">View on GitHub &rarr;</a></div>
       </div>
 
       <div class="card reveal">
@@ -544,7 +592,7 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="sec-head reveal">
-      <span class="num">04</span><h2>Toolkit</h2><span class="rule"></span>
+      <span class="num">05</span><h2>Toolkit</h2><span class="rule"></span>
     </div>
     <div class="skills-grid reveal">
       <div class="skill-cell">
@@ -571,27 +619,6 @@
         <h4>Tools &amp; Sim</h4>
         <div class="list"><span>Git</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>GDB</span><span>JIRA</span><span>MATLAB / Simulink</span><span>SPICE</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- SHIPPED -->
-  <section id="shipped">
-    <div class="sec-head reveal">
-      <span class="num">05</span><h2>Shipped to stores</h2><span class="rule"></span>
-    </div>
-    <div class="shipped">
-      <a class="ship reveal" href="https://play.google.com/store/apps/details?id=jp.starflyer.bookingapp&hl=en_US" target="_blank" rel="noopener">
-        <span class="badge">Google Play &middot; 50K+ downloads</span>
-        <h3>Star Flyer Booking App</h3>
-        <p>Contributed to the customer-facing booking app for Star Flyer (SFJ) &mdash; a production mobile product used by real travelers.</p>
-        <span class="store">View on Google Play &rarr;</span>
-      </a>
-      <a class="ship reveal" href="https://apps.apple.com/gh/app/iflycorporate-etihad/id6749933493" target="_blank" rel="noopener">
-        <span class="badge">App Store</span>
-        <h3>iFly Corporate &mdash; Etihad</h3>
-        <p>Contributed features to Etihad's corporate travel iOS app, including booking and modify-booking workflows.</p>
-        <span class="store">View on the App Store &rarr;</span>
-      </a>
     </div>
   </section>
 
