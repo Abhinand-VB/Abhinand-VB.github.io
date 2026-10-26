@@ -448,6 +448,14 @@
     <div class="proj-grid">
 
       <div class="card reveal">
+        <div class="top"><span class="kind">Applied LLM &middot; voice &middot; hackathon</span></div>
+        <h3>LastWell</h3>
+        <p>A stroke pre-alert system for 911 calls, built at Cal Hacks 13.0 with a team of four that I led. It transcribes a live phone call, flags stroke signs with Claude, and after the dispatcher approves, phones the hospital stroke team with a spoken briefing. I designed the architecture and built the safety core: every sign the model reports must be a word-for-word quote from the caller, and the time the patient was last seen well is computed by code, never by the model. On 20 scripted test calls it flagged 12 of 12 strokes, against 3 for a keyword baseline, with no invented facts. Hackathon prototype, not deployed.</p>
+        <div class="tags"><span>TypeScript</span><span>Claude API</span><span>Twilio</span><span>Next.js</span><span>Convex</span><span>zod</span></div>
+        <div class="card-links"><a class="link" href="https://github.com/Abhinand-VB/LastWell" target="_blank" rel="noopener">View on GitHub &rarr;</a><a class="link ghost" href="https://devpost.com/software/lastwell" target="_blank" rel="noopener">Devpost &rarr;</a><a class="link ghost" href="https://youtu.be/JkH4DmKh4XQ" target="_blank" rel="noopener">Demo &rarr;</a></div>
+      </div>
+
+      <div class="card reveal">
         <div class="top"><span class="kind">Distributed systems &middot; AI infra</span></div>
         <h3>Distributed AI Gateway</h3>
         <p>A cluster that pools multi-laptop compute over a Tailscale VPN to run local AI models. Prompts route from a React client to FastAPI leader/worker nodes with leader election, Kafka-backed task routing, heartbeats, failover, and Prometheus/Grafana observability.</p>
